@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wscramble</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Wscramble</h1>
+    <p>Unscramble words and sentences. 100 levels. One hint per level.</p>
+  </header>
+
+  <main>
+    <section id="setup">
+      <div class="card">
+        <h2>Select category and level</h2>
+        <div class="row">
+          <label for="category"><strong>Category:</strong></label>
+          <select id="category">
+            <option value="word">Words (50 levels)</option>
+            <option value="sentence">Sentences (50 levels)</option>
+          </select>
+        </div>
+        <div class="row">
+          <label for="level"><strong>Level:</strong></label>
+          <select id="level"></select>
+        </div>
+        <button id="startBtn">Start level</button>
+      </div>
+    </section>
+
+    <section id="game" class="hidden">
+      <div class="hud">
+        <div><strong>Category:</strong> <span id="hudCategory"></span></div>
+        <div><strong>Level:</strong> <span id="hudLevel"></span></div>
+        <div><strong>Item:</strong> <span id="hudItemIndex"></span>/5</div>
+        <div><strong>Time:</strong> <span id="hudTimer"></span></div>
+        <div><strong>Score:</strong> <span id="hudScore"></span></div>
+        <div><strong>Hint:</strong> <span id="hudHintStatus">available</span></div>
+      </div>
+
+      <div class="card">
+        <h2>Scramble</h2>
+        <div id="scramble" class="scramble"></div>
+
+        <div class="inputRow">
+          <label for="answer"><strong>Your answer:</strong></label>
+          <input id="answer" type="text" autocomplete="off" />
+        </div>
+
+        <div class="actions">
+          <button id="submitBtn">Submit</button>
+          <button id="hintBtn">Use hint</button>
+          <button id="skipBtn">Skip</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="result" class="hidden">
+      <div class="card">
+        <h2>Level complete</h2>
+        <p><strong>Level score:</strong> <span id="levelScore"></span> / 25</p>
+        <p><strong>Total score:</strong> <span id="totalScore"></span></p>
+        <div class="actions">
+          <button id="nextLevelBtn">Next level</button>
+          <button id="restartBtn">Back to selector</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© Wscramble</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
