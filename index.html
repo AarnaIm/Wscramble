@@ -3,36 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wscramble</title>
+  <title>Wscramble — Cyberpunk Edition</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <header>
-    <h1>Wscramble</h1>
-    <p>Unscramble words and sentences. 100 levels. One hint per level.</p>
+  <header class="cyber-header">
+    <h1 class="title-glow">Wscramble</h1>
+    <p class="subtitle">Neon Cyberpunk Word &amp; Sentence Scramble</p>
   </header>
 
-  <main>
-    <section id="setup">
-      <div class="card">
-        <h2>Select category and level</h2>
-        <div class="row">
-          <label for="category"><strong>Category:</strong></label>
-          <select id="category">
-            <option value="word">Words (50 levels)</option>
-            <option value="sentence">Sentences (50 levels)</option>
-          </select>
-        </div>
-        <div class="row">
-          <label for="level"><strong>Level:</strong></label>
-          <select id="level"></select>
-        </div>
-        <button id="startBtn">Start level</button>
+  <main class="container">
+
+    <!-- SETUP SECTION -->
+    <section id="setup" class="card cyber-card">
+      <h2 class="section-title">Select Category &amp; Level</h2>
+
+      <div class="form-row">
+        <label for="category">Category:</label>
+        <select id="category">
+          <option value="word">Words</option>
+          <option value="sentence">Sentences</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <label for="level">Level:</label>
+        <select id="level"></select>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="cyber-btn">Start Level</button>
       </div>
     </section>
 
+    <!-- GAME SECTION -->
     <section id="game" class="hidden">
-      <div class="hud">
+      <div class="hud cyber-hud">
         <div><strong>Category:</strong> <span id="hudCategory"></span></div>
         <div><strong>Level:</strong> <span id="hudLevel"></span></div>
         <div><strong>Item:</strong> <span id="hudItemIndex"></span>/5</div>
@@ -41,40 +48,43 @@
         <div><strong>Hint:</strong> <span id="hudHintStatus">available</span></div>
       </div>
 
-      <div class="card">
-        <h2>Scramble</h2>
-        <div id="scramble" class="scramble"></div>
+      <div class="card cyber-card">
+        <h2 class="section-title">Scramble</h2>
+
+        <div id="scramble" class="scramble cyber-box"></div>
 
         <div class="inputRow">
-          <label for="answer"><strong>Your answer:</strong></label>
-          <input id="answer" type="text" autocomplete="off" />
+          <label for="answer">Your Answer:</label>
+          <input id="answer" type="text" autocomplete="off" class="cyber-input" />
         </div>
 
         <div class="actions">
-          <button id="submitBtn">Submit</button>
-          <button id="hintBtn">Use hint</button>
-          <button id="skipBtn">Skip</button>
+          <button id="submitBtn" class="cyber-btn">Submit</button>
+          <button id="hintBtn" class="cyber-btn">Hint</button>
+          <button id="skipBtn" class="cyber-btn">Skip</button>
         </div>
 
         <div id="feedback" class="feedback"></div>
       </div>
     </section>
 
-    <section id="result" class="hidden">
-      <div class="card">
-        <h2>Level complete</h2>
-        <p><strong>Level score:</strong> <span id="levelScore"></span> / 25</p>
-        <p><strong>Total score:</strong> <span id="totalScore"></span></p>
-        <div class="actions">
-          <button id="nextLevelBtn">Next level</button>
-          <button id="restartBtn">Back to selector</button>
-        </div>
+    <!-- RESULT SECTION -->
+    <section id="result" class="hidden card cyber-card">
+      <h2 class="section-title">Level Complete</h2>
+
+      <p><strong>Level Score:</strong> <span id="levelScore"></span> / 25</p>
+      <p><strong>Total Score:</strong> <span id="totalScore"></span></p>
+
+      <div class="actions">
+        <button id="nextLevelBtn" class="cyber-btn">Next Level</button>
+        <button id="restartBtn" class="cyber-btn">Back to Selector</button>
       </div>
     </section>
+
   </main>
 
-  <footer>
-    <p>© Wscramble</p>
+  <footer class="cyber-footer">
+    <p>© Wscramble — Cyberpunk Edition</p>
   </footer>
 
   <script src="app.js"></script>
